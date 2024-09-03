@@ -10,6 +10,8 @@ public class ExceptionDemo4 {
 		int t=10/k;
 		System.out.println("End");
 	}
+	
+	
 	catch(NullPointerException e) {
 		System.out.println("I can Handle "+e);
 	}

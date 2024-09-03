@@ -9,6 +9,8 @@ public class ArrayListDemo1 {
 		mylist.add(100);
 		System.out.println(mylist);
 		
+		
+		
 
 	}
 

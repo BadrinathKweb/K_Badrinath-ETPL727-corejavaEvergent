@@ -1,21 +1,31 @@
 package Com.evergent.corejava.exceptionhandling;
-
+class InvalidEmployeeId extends Exception{
+	public InvalidEmployeeId(String mess) {
+		System.out.println("Hello "+mess);
+	}
+}
 public class Sample {
-	public void myinfo() {
-		try {
-			int k=2/0;
+	public void myinfo(String emp) throws InvalidEmployeeId {
+		String str1="ETPL";
+		if(emp.contains(str1)) {
+			System.out.println("Entered id is in format");
 		}
-		catch(Exception e) {
-			System.out.println("Handled");
-		}
-		finally {
-		System.out.println("hh");
+		else {
+			throw new InvalidEmployeeId("Please enter in the format ETPL[your id]");
 		}
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Sample s= new Sample();
-		s.myinfo();
+		try {
+			Sample s = new Sample();
+			s.myinfo("ETPL123");
+			//s.myinfo("enp");	
+		}
+		catch(InvalidEmployeeId e) {
+			System.out.println("Exception has been handled");
+		}
+		finally {
+			System.out.println("End");
+		}
 	}
 
 }
